@@ -21,6 +21,8 @@ static class TileHelper {
 }
 
 class Tile {
+  SpriteSheet tileset;
+  
   int X;
   int Y;
   int TERRAIN = 0;
@@ -28,9 +30,14 @@ class Tile {
   Tile(int X, int Y) {
     this.X = X;
     this.Y = Y;
+    tileset = new SpriteSheet("TileSheet.png");
+    tileset.currentFrame = TERRAIN;
   }
 
   void draw() {
+    tileset.currentFrame = TERRAIN;
+    tileset.pos =  TileHelper.gridToPixel(X,Y);
+    tileset.draw();
   }
 
   //returns the center of the tile in pixel coordinates

@@ -27,6 +27,7 @@ class Sprite {
 
 class SpriteSheet {
   PImage img;
+  PVector pos;
 
   int frameWidth = 32;
   int frameHeight = 32;
@@ -48,7 +49,7 @@ class SpriteSheet {
     int col= floor(currentFrame/framesPerRow);
     
     PImage currentSprite = img.get(row*frameWidth,col*frameHeight,frameWidth,frameHeight);
-    image(currentSprite,mouseX,mouseY);
+    image(currentSprite,pos.x,pos.y);
   }
 }
 
