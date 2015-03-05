@@ -9,7 +9,7 @@ class Level {
   }
   void draw() {
     for (int Y= 0; Y < tiles.length; Y++) {
-      for (int X= 0; X < tiles.length; X++) {
+      for (int X= 0; X < tiles[Y].length; X++) {
         tiles[Y][X].draw();
       }
     }

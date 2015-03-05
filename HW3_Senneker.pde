@@ -1,7 +1,7 @@
 //SpriteSheet tileSheet;
 Level level;
 void setup() {
-  size(800,800);
+  size(544,416);
   
   level = new Level();
   TileHelper.app = this;
@@ -9,6 +9,7 @@ void setup() {
 }
 
 void draw(){
+  println(level.level[0].length);
  background(0); 
  level.draw();
  //tileSheet.draw();
