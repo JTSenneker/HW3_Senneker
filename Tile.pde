@@ -12,7 +12,7 @@ static class TileHelper {
   }
 
   static PVector gridToPixel(int X, int Y) {
-    return gridToPixel(app.new Point(X, Y));
+    return new PVector(X*W,Y*H);
   }
   //convert pixel coordinates to grid coordinates
   static Point pixelToGrid(PVector  p) {
@@ -51,7 +51,10 @@ class Tile {
   }
 
   boolean isPassable() {
-    return (TERRAIN != 0);
+    if(TERRAIN == 0||TERRAIN == 1||TERRAIN == 2||TERRAIN == 3||TERRAIN == 4||TERRAIN == 5||TERRAIN == 6 ||TERRAIN == 7||TERRAIN == 8||
+    TERRAIN == 9||TERRAIN == 10||TERRAIN == 11||TERRAIN == 12||TERRAIN == 14||TERRAIN == 15||TERRAIN == 16||TERRAIN == 17||TERRAIN == 18||
+    TERRAIN == 19||TERRAIN == 22||TERRAIN == 21)return false;
+    return true;
   }
 
   /////////////PATHFINDING STUFF///////////////////////
@@ -70,8 +73,11 @@ class Tile {
     G = parent.G + getTerrainCost();
   }
   float getTerrainCost() {
-    if (TERRAIN == 0) return 99999;
-    if (TERRAIN == 1)  return 1;
+    if(TERRAIN == 0||TERRAIN == 1||TERRAIN == 2||TERRAIN == 3||TERRAIN == 4||TERRAIN == 5||TERRAIN == 6 ||TERRAIN == 7||TERRAIN == 8||
+    TERRAIN == 9||TERRAIN == 10||TERRAIN == 11||TERRAIN == 12||TERRAIN == 14||TERRAIN == 15||TERRAIN == 16||TERRAIN == 17||TERRAIN == 18||
+    TERRAIN == 19||TERRAIN == 22||TERRAIN == 21) return 99999;
+    if (TERRAIN == 24)  return 15;
+    if (TERRAIN == 25 || TERRAIN == 27 || TERRAIN == 26) return 10;
     return 1;
   }
 
