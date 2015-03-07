@@ -5,7 +5,7 @@ Pathfinder pathfinder;
 void setup() {
   TileHelper.app = this;
 
-  size(544, 416);
+  size(544, 416,P2D);
 
   level = new Level();
   player = new Player();
@@ -19,7 +19,6 @@ void draw() {
   player.update();
   
   //DRAW
-  println(player.gridP);
   background(0); 
   level.draw();
   player.draw();
